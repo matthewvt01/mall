@@ -7,7 +7,7 @@ public class ModelMall {
         return id;
     }
 
-    public String getNama() {
+    public String getNama(){
         return nama;
     }
 

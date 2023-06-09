@@ -26,6 +26,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Field;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvMall;
@@ -73,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
                 String kode = response.body().getKode();
                 String pesan = response.body().getPesan();
-
                 listMall = response.body().getData();
 
                 adMall = new AdapterMall(MainActivity.this, listMall);
