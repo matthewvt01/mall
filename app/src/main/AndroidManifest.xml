@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,19 +15,26 @@
         android:theme="@style/Theme.Mall"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.UbahActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".Activity.TambahActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".Activity.MainActivity"
+            android:name=".SplashScreen.SplashScreen"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="false"
+            android:label="Detail Activity" />
+        <activity
+            android:name=".Activity.UbahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.TambahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

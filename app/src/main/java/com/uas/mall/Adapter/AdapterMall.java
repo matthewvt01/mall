@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.uas.mall.API.APIRequestData;
 import com.uas.mall.API.RetroServer;
+import com.uas.mall.Activity.DetailActivity;
 import com.uas.mall.Activity.MainActivity;
 import com.uas.mall.Activity.UbahActivity;
 import com.uas.mall.Model.ModelMall;
@@ -46,8 +47,8 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
     public void onBindViewHolder(@NonNull VHMall holder, int position) {
         ModelMall MM = ListMall.get(position);
         holder.tvId.setText(MM.getId());
-        holder.tvDeskripsi.setText(MM.getDeskripsi());
         holder.tvNama.setText(MM.getNama());
+        holder.tvDeskripsi.setText(MM.getDeskripsi());
         holder.tvKoordinat.setText(MM.getKoordinat());
         holder.tvAlamat.setText(MM.getAlamat());
         holder.tvTahun.setText(MM.getTahun());
@@ -60,7 +61,7 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
 
     public class VHMall extends RecyclerView.ViewHolder{
         TextView tvId, tvNama, tvDeskripsi, tvKoordinat, tvAlamat, tvTahun;
-        Button btnHapus, btnUbah;
+        Button btnHapus, btnUbah, btnDetail;
 
         public VHMall(@NonNull View itemView) {
             super(itemView);
@@ -74,6 +75,7 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
 
             btnHapus = itemView.findViewById(R.id.btn_hapus);
             btnUbah = itemView.findViewById(R.id.btn_ubah);
+            btnDetail = itemView.findViewById(R.id.btn_detail);
 
             btnHapus.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,6 +89,19 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
                 public void onClick(View v) {
                     Intent pindah = new Intent(ctx, UbahActivity.class);
                     pindah.putExtra("xId", tvId.getText().toString());
+                    pindah.putExtra("xNama", tvNama.getText().toString());
+                    pindah.putExtra("xDeskripsi", tvDeskripsi.getText().toString());
+                    pindah.putExtra("xKoordinat", tvKoordinat.getText().toString());
+                    pindah.putExtra("xAlamat", tvAlamat.getText().toString());
+                    pindah.putExtra("xTahun", tvTahun.getText().toString());
+                    ctx.startActivity(pindah);
+                }
+            });
+
+            btnDetail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent pindah = new Intent(ctx, DetailActivity.class);
                     pindah.putExtra("xNama", tvNama.getText().toString());
                     pindah.putExtra("xDeskripsi", tvDeskripsi.getText().toString());
                     pindah.putExtra("xKoordinat", tvKoordinat.getText().toString());

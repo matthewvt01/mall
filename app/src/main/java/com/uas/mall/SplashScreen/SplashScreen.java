@@ -10,19 +10,20 @@ import com.uas.mall.Activity.MainActivity;
 import com.uas.mall.R;
 
 public class SplashScreen extends AppCompatActivity {
+    private static final int SPLASH_TIMEOUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        getSupportActionBar().hide();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                Intent splash = new Intent(SplashScreen.this, MainActivity.class);
+                startActivity(splash);
                 finish();
             }
-        }, 3000);
+        }, SPLASH_TIMEOUT);
     }
 }
