@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.uas.mall.API.APIRequestData;
 import com.uas.mall.API.RetroServer;
-import com.uas.mall.Activity.DetailActivity;
 import com.uas.mall.Activity.MainActivity;
 import com.uas.mall.Activity.UbahActivity;
 import com.uas.mall.Model.ModelMall;
@@ -61,7 +60,7 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
 
     public class VHMall extends RecyclerView.ViewHolder{
         TextView tvId, tvNama, tvDeskripsi, tvKoordinat, tvAlamat, tvTahun;
-        Button btnHapus, btnUbah, btnDetail;
+        Button btnHapus, btnUbah;
 
         public VHMall(@NonNull View itemView) {
             super(itemView);
@@ -87,20 +86,6 @@ public class AdapterMall extends RecyclerView.Adapter<AdapterMall.VHMall> {
                 @Override
                 public void onClick(View v) {
                     Intent pindah = new Intent(ctx, UbahActivity.class);
-                    pindah.putExtra("xId", tvId.getText().toString());
-                    pindah.putExtra("xNama", tvNama.getText().toString());
-                    pindah.putExtra("xDeskripsi", tvDeskripsi.getText().toString());
-                    pindah.putExtra("xKoordinat", tvKoordinat.getText().toString());
-                    pindah.putExtra("xAlamat", tvAlamat.getText().toString());
-                    pindah.putExtra("xTahun", tvTahun.getText().toString());
-                    ctx.startActivity(pindah);
-                }
-            });
-
-            btnDetail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent pindah = new Intent(ctx, DetailActivity.class);
                     pindah.putExtra("xId", tvId.getText().toString());
                     pindah.putExtra("xNama", tvNama.getText().toString());
                     pindah.putExtra("xDeskripsi", tvDeskripsi.getText().toString());

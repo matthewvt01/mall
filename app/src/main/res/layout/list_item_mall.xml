@@ -35,29 +35,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Deskripsi"
-            android:textSize="17sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tv_koordinat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Koordinat"
-            android:textSize="17sp"/>
+            android:text="koordinat"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tv_alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alamat"
-            android:textSize="17sp"
-            android:maxLines="2"
-            android:justificationMode="inter_word"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
 
         <TextView
             android:id="@+id/tv_tahun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tahun"
+            android:text="Tahun Pembangunan"
             android:textSize="17sp"
             android:maxLines="2"
             android:ellipsize="end"
@@ -87,15 +89,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Hapus"
-                android:drawableLeft="@drawable/ic_delete"
-                android:layout_weight="1"
-                android:layout_marginLeft="2dp"/>
-
-            <Button
-                android:id="@+id/btn_detail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Detail"
                 android:drawableLeft="@drawable/ic_delete"
                 android:layout_weight="1"
                 android:layout_marginLeft="2dp"/>
